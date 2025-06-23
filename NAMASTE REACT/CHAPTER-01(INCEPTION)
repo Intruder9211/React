@@ -1,0 +1,79 @@
+THEORY
+Q- What is EMMET?
+A- EMMET is a plugin/tool used in most modern text editors to improve HTML ans CSS writing speed.
+   It allows you to write shorthand syntax which expands into full HTML/CSS code.
+   ex - div.container>ul>li*3
+   <div class="container">
+  <ul>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+</div>
+
+
+
+
+Q- Diff btw library and framework?
+A- | Feature     | Library              | Framework                      |
+| ----------- | -------------------- | ------------------------------ |
+| Control     | You call the library | Framework calls your code      |
+| Flexibility | More flexible        | Less flexible (more structure) |
+| Example     | React, jQuery        | Angular, Django                |
+
+
+
+
+Q- What is CDN? why do we use it ?
+A- CDN (Content Delivery Network) is a globally distributed network of servers that deliver 
+   static content (JS, CSS, images) quickly.
+
+Why use it?
+
+Faster loading (gets content from nearby server)
+Reduces server load
+Improves performance
+Caches content
+ex - <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+
+
+
+
+Q- why is react known as React?
+A- The name React comes from its reactive programming nature — it reacts to data changes 
+efficiently using a Virtual DOM, allowing dynamic UI updates.
+
+
+
+Q- what is crossorigin in sscript tag?
+A- crossorigin attribute is used when loading scripts from a different origin (CDN, another domain).
+   ex - <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+
+
+
+
+
+Q- Diff btw React and ReactDOM?
+A- // React creates components
+const element = React.createElement('h1', null, 'Hello');
+
+// ReactDOM renders them
+ReactDOM.render(element, document.getElementById('root'));
+
+
+
+
+Q- what is async and defer in script tags?
+A- Attribute	Behavior	Hinglish
+async:>	Downloads script in parallel and executes as soon as it’s ready (might block HTML parsing temporarily)	
+defer:>	Downloads script in parallel but waits to execute after HTML parsing is done	
+
+<!-- async: Script chalega jaise hi download ho jaaye -->
+<script async src="https://example.com/analytics.js"></script>
+
+<!-- defer: Script chalega jab HTML pura load ho jaaye -->
+<script defer src="https://example.com/app.js"></script>
+
+
+
+
