@@ -1,0 +1,127 @@
+1. What is NPM?
+NPM (Node Package Manager) is the default package manager for Node.js. It allows developers to install, 
+share, and manage packages (libraries or tools) that help in building JavaScript applications.
+
+
+
+
+2. What is Parcel/Webpack? Why do we need it?
+Both Parcel and Webpack are bundlers that compile, transform, and bundle source code (JS, CSS, images, etc.) into optimized files for the browser.
+We need them to:
+
+Manage dependencies
+Enable development features like hot reloading
+Optimize code for production
+
+
+
+
+3. What is .parcel-cache?
+.parcel-cache is a folder created by Parcel to store information about previously built files. It speeds up the next build by avoiding redundant work.
+
+
+
+
+4. What is npx?
+npx is a Node.js tool that executes packages without needing to install them globally. It’s handy for running one-off scripts or tools like create-react-app.
+
+
+
+
+5. What is the difference between dependencies and devDependencies?
+dependencies are needed for your project to run in production.
+devDependencies are only needed during development (e.g., testing tools, bundlers).
+
+
+
+
+6. What is Tree Shaking?
+Tree shaking is a technique used during bundling that removes unused code. It helps reduce final bundle size and improve performance.
+
+
+
+
+7. What is Hot Module Replacement?
+Hot Module Replacement (HMR) allows updated modules to be replaced live without a full page reload, making development faster and smoother.
+
+
+
+
+8. List down your favourite 5 superpowers of Parcel and describe any 3 of them in your own words.
+Top 5 Superpowers:
+
+Zero Configuration
+Hot Module Replacement
+Fast Builds with Caching
+Automatic Dependency Installation
+Built-in Support for Multiple File Types
+
+Descriptions:
+
+Zero Configuration: You can start using Parcel without writing any config file. It intelligently figures things out.
+Hot Module Replacement: Parcel refreshes only the modified parts of the app, making development seamless.
+Automatic Dependency Installation: If you import a package and forget to install it, Parcel will automatically prompt you or install it.
+
+
+
+
+9. What is .gitignore? What should we add and not add into it?
+.gitignore is a file where you list all files/folders you don’t want to commit to git.
+Should add: node_modules, .parcel-cache, dist, .env
+Should not add: source code, package.json, essential config files.
+
+
+
+
+10. What is the difference between package.json and package-lock.json?
+package.json defines the project metadata and dependencies.
+package-lock.json locks the versions of installed packages to ensure exact same installs for everyone.
+
+
+
+
+11. Why should I not modify package-lock.json?
+It’s auto-generated. Modifying it manually can lead to dependency conflicts or version mismatches.
+
+
+
+
+12. What is node_modules? Is it a good idea to push that on git?
+node_modules is the folder where all installed packages are stored.
+No, it should not be pushed to git — instead, we use package.json to regenerate it.
+
+
+
+
+13. What is the dist folder?
+The dist (distribution) folder contains the final bundled output of your application, ready for production deployment.
+
+
+
+
+14. What is browserslist?
+browserslist is a config that tells bundlers and transpilers (like Babel) which browsers you want to support.
+It ensures compatibility by only including necessary polyfills.
+
+
+
+
+Additional Readings (Brief Notes):
+
+
+
+Vite: A fast modern bundler with native ESM support.
+
+Webpack: Highly configurable bundler with plugin ecosystem.
+
+Parcel: Zero-config bundler good for small/medium projects.
+
+^ (Caret): Allows updates that do not change the leftmost non-zero version.
+
+Example: ^1.2.3 → 1.x.x but not 2.x.x
+
+~ (Tilde): Allows patch-level updates.
+
+Example: ~1.2.3 → 1.2.x
+
+Script types in HTML: The default is type="text/javascript"; for modules, use type="module" to enable import/export syntax.
