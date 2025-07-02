@@ -1,0 +1,131 @@
+Q1. What is JSX?
+JSX (JavaScript XML) is a syntax extension for JavaScript that looks similar to HTML. 
+It allows developers to write HTML-like code inside JavaScript, which is later transformed into React elements.
+
+
+
+
+Q2. Superpowers of JSX
+Allows writing HTML-like syntax within JavaScript.
+Makes code more readable and declarative.
+Enables embedding JavaScript expressions using {}.
+JSX is converted into React.createElement() calls under the hood.
+
+
+
+
+Q3. Role of type attribute in script tag? What options can I use there?
+The type attribute in a <script> tag specifies the scripting language. Common options:
+text/javascript – default for JavaScript.
+module – used to load JavaScript modules (ES6 modules).
+application/json – for embedding JSON data.
+importmap – used to define import maps for module specifiers.
+
+
+
+
+Q4. {TitleComponent} vs {<TitleComponent />} vs {<TitleComponent></TitleComponent>} in JSX
+{TitleComponent}: Refers to the component itself, not an instance. It won’t render anything.
+{<TitleComponent />}: Renders the component; this is a self-closing JSX tag.
+{<TitleComponent></TitleComponent>}: Equivalent to the above; allows children to be passed inside.
+
+
+
+
+Q5. Create a Nested header Element using React.createElement
+js
+
+const header = React.createElement("div", { className: "title" }, [
+  React.createElement("h1", {}, "Heading 1"),
+  React.createElement("h2", {}, "Heading 2"),
+  React.createElement("h3", {}, "Heading 3"),
+]);
+
+
+
+
+Q6. Create the same element using JSX
+jsx
+
+const header = (
+  <div className="title">
+    <h1>Heading 1</h1>
+    <h2>Heading 2</h2>
+    <h3>Heading 3</h3>
+  </div>
+);
+
+
+
+
+Q7. Create a functional component of the same with JSX
+jsx
+
+const Header = () => (
+  <div className="title">
+    <h1>Heading 1</h1>
+    <h2>Heading 2</h2>
+    <h3>Heading 3</h3>
+  </div>
+);
+
+
+
+
+Q8. Pass attributes into the tag in JSX
+jsx
+
+const Header = () => (
+  <div className="title" id="main-header">
+    <h1 style={{ color: "blue" }}>Heading 1</h1>
+  </div>
+);
+
+
+
+
+Q9. Composition of Component (Add a component inside another)
+jsx
+
+const Title = () => <h1>This is a Title</h1>;
+
+const Header = () => (
+  <div>
+    <Title />
+    <p>Subtitle goes here</p>
+  </div>
+);
+
+
+
+
+Q10. Create a Header Component from scratch using Functional Components with JSX
+jsx
+
+const Header = () => (
+  <div className="header">
+    <img src="logo.png" alt="Logo" className="logo" />
+    <input type="text" placeholder="Search..." className="search-bar" />
+    <img src="user-icon.png" alt="User" className="user-icon" />
+  </div>
+);
+Example CSS:
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #f4f4f4;
+}
+.logo {
+  height: 40px;
+}
+.search-bar {
+  width: 300px;
+  padding: 5px;
+}
+.user-icon {
+  height: 40px;
+  border-radius: 50%;
+}
