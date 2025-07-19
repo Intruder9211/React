@@ -3,7 +3,7 @@ JSX (JavaScript XML) is a syntax extension for JavaScript that looks similar to 
 It allows developers to write HTML-like code inside JavaScript, which is later transformed into React elements.
 
 
-
+-----------------------------------------------------------------------------------------------------------------------
 
 Q2. Superpowers of JSX
 Allows writing HTML-like syntax within JavaScript.
@@ -11,7 +11,7 @@ Makes code more readable and declarative.
 Enables embedding JavaScript expressions using {}.
 JSX is converted into React.createElement() calls under the hood.
 
-
+-----------------------------------------------------------------------------------------------------------------------
 
 
 Q3. Role of type attribute in script tag? What options can I use there?
@@ -21,7 +21,7 @@ module – used to load JavaScript modules (ES6 modules).
 application/json – for embedding JSON data.
 importmap – used to define import maps for module specifiers.
 
-
+-----------------------------------------------------------------------------------------------------------------------
 
 
 Q4. {TitleComponent} vs {<TitleComponent />} vs {<TitleComponent></TitleComponent>} in JSX
@@ -29,7 +29,7 @@ Q4. {TitleComponent} vs {<TitleComponent />} vs {<TitleComponent></TitleComponen
 {<TitleComponent />}: Renders the component; this is a self-closing JSX tag.
 {<TitleComponent></TitleComponent>}: Equivalent to the above; allows children to be passed inside.
 
-
+-----------------------------------------------------------------------------------------------------------------------
 
 
 Q5. Create a Nested header Element using React.createElement
@@ -42,7 +42,7 @@ const header = React.createElement("div", { className: "title" }, [
 ]);
 
 
-
+-----------------------------------------------------------------------------------------------------------------------
 
 Q6. Create the same element using JSX
 jsx
@@ -55,7 +55,7 @@ const header = (
   </div>
 );
 
-
+-----------------------------------------------------------------------------------------------------------------------
 
 
 Q7. Create a functional component of the same with JSX
@@ -69,7 +69,7 @@ const Header = () => (
   </div>
 );
 
-
+-----------------------------------------------------------------------------------------------------------------------
 
 
 Q8. Pass attributes into the tag in JSX
@@ -81,7 +81,7 @@ const Header = () => (
   </div>
 );
 
-
+-----------------------------------------------------------------------------------------------------------------------
 
 
 Q9. Composition of Component (Add a component inside another)
@@ -97,7 +97,7 @@ const Header = () => (
 );
 
 
-
+-----------------------------------------------------------------------------------------------------------------------
 
 Q10. Create a Header Component from scratch using Functional Components with JSX
 jsx
