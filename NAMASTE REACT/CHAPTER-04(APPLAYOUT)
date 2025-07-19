@@ -1,0 +1,176 @@
+1. Is JSX mandatory for React?
+❖ No, JSX is not mandatory for React.
+
+Simple Explanation:
+JSX is just syntactic sugar for React.createElement(). You can write React without JSX using plain JavaScript.
+
+Deep Explanation:
+JSX makes it easier to describe the UI by mixing HTML-like syntax with JavaScript. However, React internally 
+converts JSX into React.createElement. Therefore, using plain JS is possible but less readable.
+
+Example:
+// Using JSX
+const element = <h1>Hello, World!</h1>;
+
+// Without JSX
+const element = React.createElement('h1', null, 'Hello, World!');
+
+-----------------------------------------------------------------------------------------------------------------------
+
+
+2. Is ES6 mandatory for React?
+❖ No, ES6 is not mandatory, but it is recommended.
+
+Simple Explanation:
+React can run with ES5, but ES6 features like classes, arrow functions, and destructuring make the code more concise and modern.
+
+Deep Explanation:
+While you can write React in ES5, most tutorials, libraries, and tools are written using ES6 or newer syntax, improving readability and productivity.
+
+Example:
+// ES6 class component
+class MyComponent extends React.Component {
+  render() {
+    return <h1>Hello ES6</h1>;
+  }
+}
+
+// ES5 function component
+var MyComponent = React.createClass({
+  render: function() {
+    return <h1>Hello ES5</h1>;
+  }
+});
+
+-----------------------------------------------------------------------------------------------------------------------
+
+
+3. {TitleComponent} vs {<TitleComponent />} vs {<TitleComponent></TitleComponent>}
+❖ {TitleComponent} passes the component as a reference, <TitleComponent /> renders it.
+
+Simple Explanation:
+
+{TitleComponent}: refers to the component function itself.
+
+{<TitleComponent />} or {<TitleComponent></TitleComponent>}: renders the component.
+
+Deep Explanation:
+You use {TitleComponent} when passing it as a prop or variable, but you render it with <TitleComponent />.
+
+Example:
+function TitleComponent() {
+  return <h1>Hello</h1>;
+}
+
+const App = () => {
+  return (
+    <>
+      {TitleComponent}        {/* Reference to the function */}
+      <TitleComponent />      {/* Rendering the component */}
+      <TitleComponent></TitleComponent> {/* Same as above */}
+    </>
+  );
+};
+
+
+-----------------------------------------------------------------------------------------------------------------------
+
+4. How to write comments in JSX?
+❖ Use {/* comment */} inside JSX.
+
+Example:
+return (
+  <div>
+    {/* This is a comment in JSX */}
+    <h1>Hello World</h1>
+  </div>
+);
+
+
+-----------------------------------------------------------------------------------------------------------------------
+
+5. What is <React.Fragment></React.Fragment> and <> </> ?
+❖ Both are used to group multiple elements without adding extra nodes to the DOM.
+
+Simple Explanation:
+Fragments let you return multiple elements without a wrapper div.
+
+Deep Explanation:
+<React.Fragment> is the full syntax, while <> </> is the shorthand. Useful when rendering sibling elements without adding unnecessary HTML elements.
+
+Example:
+return (
+  <>
+    <h1>Title</h1>
+    <p>Paragraph</p>
+  </>
+);
+
+-----------------------------------------------------------------------------------------------------------------------
+
+
+6. What is Virtual DOM?
+❖ Virtual DOM is a lightweight copy of the real DOM used to optimize rendering.
+
+Explanation:
+React keeps a virtual representation of the DOM in memory. When changes occur, React updates the Virtual DOM first, 
+compares it to the previous version, and updates only the changed parts in the real DOM.
+
+
+-----------------------------------------------------------------------------------------------------------------------
+
+
+7. What is Reconciliation in React?
+❖ Reconciliation is the process of updating the DOM when data changes.
+
+Explanation:
+React compares the new Virtual DOM with the old one (diffing) and applies minimal updates to the real DOM, improving performance.
+
+
+-----------------------------------------------------------------------------------------------------------------------
+
+
+8. What is React Fiber?
+❖ React Fiber is the new reconciliation engine in React for better rendering.
+
+Explanation:
+Introduced in React 16, Fiber enables React to pause, interrupt, and prioritize rendering tasks, improving responsiveness for complex applications.
+
+
+-----------------------------------------------------------------------------------------------------------------------
+
+
+9. Why do we need keys in React? When do we need keys in React?
+❖ Keys help React identify which items changed, are added, or removed in a list.
+
+Explanation:
+When rendering lists of elements, keys improve performance by allowing React to track changes efficiently.
+
+Example:
+items.map(item => <li key={item.id}>{item.name}</li>);
+
+-----------------------------------------------------------------------------------------------------------------------
+
+
+10. Can we use index as keys in React?
+❖ Yes, but it is not recommended if the list order changes.
+
+Explanation:
+Using index as keys can lead to rendering bugs when the list order changes because React may incorrectly match elements.
+
+
+-----------------------------------------------------------------------------------------------------------------------
+
+
+11. What is props in React?
+❖ Props are inputs to components, passed from parent to child.
+
+Simple Explanation:
+Props allow data flow from parent to child components, making components reusable.
+
+Example:
+function Welcome(props) {
+  return <h1>Hello, {props.name}</h1>;
+}
+
+<Welcome name="John" />
